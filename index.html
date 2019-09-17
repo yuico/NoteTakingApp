@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id=wrap>
+        <div id=logoSet>
+            <img id=logo src=imgs/nlogo.png>
+            <span id=logoTxt>Note Clutter</span>
+        </div>
+        <form class=txt action=main.html method=post>
+            <h1 id=time></h3>
+            <h1 id=hello></h3>
+            <h2 id=q1>Welcome to Note Clutter</h1>
+            <!-- <input type=text id=name name=name placeholder="note's name">
+            <h2 id=ps>Enter your password.</h1>
+            <input type=password id=password name=password placeholder=password><br> -->
+            <input type=submit id=submit name=submit value="Go to add note">    
+        </form>    
+    </div>
+    <script>
+        let today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        document.querySelector("#time").innerHTML = h + " : " + m;
+        
+        function hello(e) {
+            if (e < 12  && e > 5) {
+                var t = "morning.";
+            } else if (e < 18) {
+                var t = "afternoon.";
+            } else {
+                var t = "evening.";
+            } 
+            document.querySelector("#hello").innerHTML = "Good " + t;
+        }
+        hello(h);
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Note Clutter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id=wrap>
+        <div id=logoSet>
+            <img id=logo src=imgs/nlogo.png> <span id=logoTxt>Note Clutter</span>
+        </div>
+        <div class=formGroup>
+
+            <form id=inputBox>
+                <label>Title</label>
+                <input type=text id=inpTitle placeholder="Enter the title" name=inpTitle><br>
+                <label>Date</label>
+                <input type=date id=inpDate name=date><br>
+                <label>Detail</label><br>
+                <textarea id=inpDetail name=inpDetail cols=30 rows=5 placeholder="Enter the detail"></textarea><br>
+                <label id=imp>Importance</label>
+                <input type=radio class="chBox high" name=chBox value=high checked> high
+                <input type=radio class="chBox low" name=chBox value=low> low<br>
+                <button type=button id=btnAdd>Add</button>
+                
+            </form>
+            <form id=outputBox>
+                <label id=noteTxt>Note list (<span id=count>0</span>)</label><br>
+                <div id=noteList></div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    const inpTitle = document.querySelector("#inpTitle");
+    const inpDate = document.querySelector("#inpDate");
+    const inpDetail = document.querySelector("#inpDetail");
+    const btnAdd = document.querySelector("#btnAdd");
+    const chBox = document.querySelector(".chBox"); 
+    const noteList = document.querySelector("#noteList");
+    const count = document.querySelector("#count");
+    const checked = document.querySelector(".high").checked;
+    let importance = "Important";
+    
+    
+
+    btnAdd.onclick = function () {
+        if ( !inpTitle.value || !inpDate.value || !inpDetail.value ) {
+            alert("Please complete your note.");
+            
+
+        } else {
+            const key = inpTitle.value;
+            const value = inpDetail.value + "(Date: " + inpDate.value + ")";
+
+            /* console.log(key);
+            console.log(value);*/
+            if(checked) {
+                importance = "not Important";
+            }
+
+
+            if (key && value) {
+                localStorage.setItem(key, value);
+                location.reload();
+            }
+        }
+
+
+    };
+    let num = 0
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        num += 1;
+        count.innerHTML = num;
+        
+        noteList.innerHTML += `- ${importance} <b>${key}</b>: ${value} <img id="removeItem" src="imgs/x.png"><img><br>`;
+    }
+
+    /* removeItem.onclick = function() {
+        alert('edx');
+        let idx = e.parentNode.value;
+        localStorage.removeItem(key(idx));
+    } */
+</script>
+
+</html>

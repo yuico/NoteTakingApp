@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: url("../imgs/wood-3271749_1280.jpg");
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+input {
+    font-family: Quicksand;
+    font-weight: 600;
+    border-radius: 7px;
+    opacity: .7;
+    display: inline-block;
+    background-color:white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    padding: 10px;
+} 
+
+textarea {
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px;
+    opacity: .7;
+}
+
+#logoSet {
+    display: flex;
+    align-items:center;
+    margin: 20px;
+    height: 50px;
+}
+#logo {
+    width: 30px;
+}
+
+#logoTxt {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+}
+
+.txt {
+    text-align: center;
+    /* font-family: 'Helvetica Neue'; */
+    font-family: Quicksand;
+    font-weight: 800;
+    padding-top: 100px;
+    color: white;
+    text-shadow: 0.1em 0.2em 0.2em black;
+}
+
+#time, #hello {
+    color: rgb(197, 0, 171);
+    text-shadow: 0 0 0;
+}
+
+#q1, #ps{
+    margin-top: 30px;
+}
+
+#submit {
+    cursor: pointer;
+    margin-top: 30px;
+    display: inline-block;
+    opacity: 1;
+    background-color: cornflowerblue; 
+    color: white;
+    height: 35px;
+}
+#submit:hover {
+    background-color: rgb(66, 122, 226);
+    color: white;
+}
+
+label {
+    display: inline-block;
+    width: 60px;
+    font-family: Quicksand;
+    font-weight: Bold;
+    margin: 3px;
+}
+
+#outputBox {
+    background: white;
+    opacity: .8;
+    height: 200px;
+    padding: 20px;
+    font-family: Helvetica, sans-serif;
+    font-size: 0.8em;
+    white-space: nowrap; 
+    overflow: scroll; 
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 50px;
+}
+
+#inputBox {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#btnAdd {
+    cursor: pointer;
+    border-radius: 7px;
+    margin-top: 10px;
+    display: inline-block;
+    opacity: 1;
+    background-color: cornflowerblue; 
+    color: white;
+    height: 30px;
+    width: 50px;
+}
+
+#count {
+    color: red;
+}
+.chBox {
+    margin: 0;
+    padding: 0;
+    display: inline-black;
+    height: 12px;
+}
+
+#imp {
+    width: 100px;
+
+}
